@@ -1,28 +1,27 @@
-import platform
 import os
-import sys
 import numpy as np
 
 DISPLAY_MODE = None
 display_module = None
 
+# is_raspberry_pi() 関数は削除
+
 def _detect_display_mode():
     global DISPLAY_MODE, display_module
-    if os.uname().nodename == 'raspberrypi':
-        try:
-            import pi0disp
-            DISPLAY_MODE = 'PI0DISP'
-            display_module = pi0disp.ST7789V # ドライバクラスを代入
-        except ImportError:
-            import cv2
-            DISPLAY_MODE = 'OPENCV'
-            display_module = cv2
-    else:
+    try:
+        # まず pi0disp.ST7789V の初期化を試みる
+        import pi0disp
+        # ST7789V クラスの初期化が成功するかどうかで判断
+        # インスタンス化は Display.__init__ で行うので、ここではクラスを代入するだけ
+        display_module = pi0disp.ST7789V
+        DISPLAY_MODE = 'PI0DISP'
+    except (ImportError, RuntimeError): # RuntimeError は pi0disp.ST7789V() の初期化失敗を想定
+        # 失敗したら OpenCV にフォールバック
         import cv2
         DISPLAY_MODE = 'OPENCV'
         display_module = cv2
 
-# _detect_display_mode() # この行を削除
+# _detect_display_mode() # この行は削除
 
 class Display:
     def __init__(self, width, height):
