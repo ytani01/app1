@@ -67,6 +67,7 @@ class Display:
 
 def main() -> None:
     _detect_display_mode() # ここに移動
+    assert display_module is not None # mypyのために追加
     
     # Constants for screen and object sizes
     SCREEN_WIDTH = 640
