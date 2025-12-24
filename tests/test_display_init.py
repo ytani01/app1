@@ -57,7 +57,7 @@ def test_display_init_pc_environment():
         display_instance = app1_init.Display(640, 480)
         
         mock_cv2.namedWindow.assert_called_once_with("app1", mock_cv2.WINDOW_NORMAL)
-        # mock_cv2.imshow.assert_called_once() # Removed
+        # mock_cv2.imshow.assert_called_once() # Called once in Display.__init__
         # mock_cv2.waitKey.assert_called_once() # Removed
         mock_pi0disp.init.assert_not_called()
 
@@ -70,10 +70,10 @@ def test_clear_with_color():
         import app1.__init__ as app1_init
         app1_init._detect_display_mode() # Call explicitly to set globals
         
-        assert app1_init.DISPLAY_MODE == 'OPENCV'
+        assert app1_init.DISPLAY_MODE == 'OPENCV' # 修正
         display_instance = app1_init.Display(640, 480)
         
-        # Initial imshow call from __init__
+        # Reset mocks for calls within __init__
         mock_cv2.imshow.reset_mock()
         mock_cv2.waitKey.reset_mock()
 
@@ -140,10 +140,8 @@ def test_draw_rect():
         display_instance_pi = app1_init.Display(640, 480)
         display_instance_pi.clear() # Call clear to initialize self.display.frame
         
-        # Reset mock for draw_rect
-        mock_pi0disp.ST7789V.return_value.draw_rect.reset_mock()
+        mock_pi0disp.ST7789V.return_value.draw_rect.reset_mock() # Reset mock for draw_rect
 
         display_instance_pi.draw_rect(x, y, w, h, color)
         
-        # For pi0disp, we assume a draw_rect method exists on the display object
         mock_pi0disp.ST7789V.return_value.draw_rect.assert_called_once_with(x, y, w, h, color)

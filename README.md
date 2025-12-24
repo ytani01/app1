@@ -10,4 +10,9 @@
 
 ## 開発環境
 
-- すべてPython
+- Python
+- uv
+- git
+- pytest
+- ruff, mypy
+
