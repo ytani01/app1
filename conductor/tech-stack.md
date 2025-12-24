@@ -7,7 +7,7 @@
 ### コア
 - `click`: コマンドラインインターフェース構築用
 - `opencv-python`: pi0dispがない環境での表示用
-- `pi0disp`: Raspberry Pi接続LCDへの表示用 (ローカル依存)
+- `pi0disp`: Raspberry Pi接続LCDへの表示用 (ローカル依存、ST7789Vドライバを使用)
 - `pigpio`: Raspberry Pi GPIO制御用
 
 ### 開発

@@ -2,13 +2,13 @@
 
 ## フェーズ 1: 環境セットアップと基本描画
 
-- [ ] Task: pi0dispとopencv-pythonの初期化
-    - [ ] Task: 動作環境（Raspberry Pi with pi0disp / PC）を判定し、適切なディスプレイ初期化処理を実装
-    - [ ] Task: 画面をクリアし、指定した色で塗りつぶす基本機能の実装
-- [ ] Task: オブジェクト（ボール、パドル、ブロック）の基本描画機能の実装
-    - [ ] Task: 矩形を描画するヘルパー関数を実装
-    - [ ] Task: 画面中央にパドル、ボール、適当な位置にブロックを仮配置し、描画を確認
-- [ ] Task: Conductor - User Manual Verification 'フェーズ 1: 環境セットアップと基本描画' (Protocol in workflow.md)
+- [x] Task: pi0dispとopencv-pythonの初期化
+    - [x] Task: 動作環境（Raspberry Pi with pi0disp / PC）を判定し、適切なディスプレイ初期化処理を実装
+    - [x] Task: 画面をクリアし、指定した色で塗りつぶす基本機能の実装
+- [x] Task: オブジェクト（ボール、パドル、ブロック）の基本描画機能の実装
+    - [x] Task: 矩形を描画するヘルパー関数を実装
+    - [x] Task: 画面中央にパドル、ボール、適当な位置にブロックを仮配置し、描画を確認
+- [~] Task: Conductor - User Manual Verification 'フェーズ 1: 環境セットアップと基本描画' (Protocol in workflow.md)
 
 ## フェーズ 2: ボールとパドルの実装
 

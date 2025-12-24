@@ -115,9 +115,9 @@ All tasks follow a strict lifecycle:
     -   Stage all changes. If no changes occurred in this step, proceed with an empty commit.
     -   Perform the commit with a clear and concise message (e.g., `conductor(checkpoint): Checkpoint end of Phase X`).
 
-7.  **Attach Auditable Verification Report using Git Notes:**
-    -   **Step 8.1: Draft Note Content:** Create a detailed verification report including the automated test command, the manual verification steps, and the user's confirmation.
-    -   **Step 8.2: Attach Note:** Use the `git notes` command and the full commit hash from the previous step to attach the full report to the checkpoint commit.
+7.  **Attach Auditable Verification Report to Commit Message:**
+    -   **Step 7.1: Draft Report Content:** Create a detailed verification report including the automated test command, the manual verification steps, and the user's confirmation.
+    -   **Step 7.2: Update Commit Message:** Append the report content to the previous checkpoint commit message.
 
 8.  **Get and Record Phase Checkpoint SHA:**
     -   **Step 7.1: Get Commit Hash:** Obtain the hash of the *just-created checkpoint commit* (`git log -1 --format="%H"`).
@@ -140,7 +140,7 @@ Before marking any task complete, verify:
 - [ ] All public functions/methods are documented (e.g., docstrings, JSDoc, GoDoc)
 - [ ] Type safety is enforced (e.g., type hints, TypeScript types, Go types)
 - [ ] No linting or static analysis errors (using the project's configured tools)
-- [ ] Works correctly on mobile (if applicable)
+- [ ] Works beautifully on mobile (if applicable)
 - [ ] Documentation updated if needed
 - [ ] No security vulnerabilities introduced
 

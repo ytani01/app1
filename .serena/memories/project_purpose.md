@@ -1,0 +1,2 @@
+# Project Purpose
+This project implements a simple Breakout game. It is designed to be playable on a Raspberry Pi using an LCD connected via `pi0disp`, or on a standard PC environment using OpenCV for display. User input is handled via the keyboard.

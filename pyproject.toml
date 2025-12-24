@@ -1,0 +1,32 @@
+[project]
+name = "app1"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Yoichi Tanibayashi", email = "yoichi@tanibayashi.jp" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "click>=8.3.1",
+    "opencv-python>=4.11.0.86",
+    "pi0disp",
+    "pigpio>=1.78",
+]
+
+[project.scripts]
+app1 = "app1:main"
+
+[build-system]
+requires = ["uv_build>=0.9.18,<0.10.0"]
+build-backend = "uv_build"
+
+[tool.uv.sources]
+pi0disp = { path = "../pi0disp" }
+
+[dependency-groups]
+dev = [
+    "mypy>=1.19.1",
+    "pytest>=9.0.2",
+    "ruff>=0.14.10",
+]
