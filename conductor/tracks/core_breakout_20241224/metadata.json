@@ -1,0 +1,8 @@
+{
+"track_id": "core_breakout_20241224",
+"type": "feature",
+"status": "new",
+"created_at": "2024-12-24T00:00:00Z",
+"updated_at": "2024-12-24T00:00:00Z",
+"description": "pi0dispの基本的な描画機能とキーボード入力で動作するシンプルなブロック崩しゲームのコア機能を実装する。",
+}
